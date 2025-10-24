@@ -120,6 +120,22 @@ namespace Voxelization.Tools
 
         private void HeaderPart()
         {
+            
+            // Generate a Label with custom style
+            GUIStyle headerStyle = new GUIStyle(GUI.skin.label);
+            headerStyle.fontSize = 18;
+            headerStyle.fontStyle = FontStyle.Bold;
+            headerStyle.alignment = TextAnchor.MiddleCenter;
+            headerStyle.normal.textColor = VoxelizerEditorUtils.GetColorFromHEX("#94eff2"); 
+            GUILayout.Label(appName, headerStyle);
+            GUILayout.Space(10f);
+            
+            
+            
+            
+            
+            
+            /*
             GUIStyle tinyButtonStyle = VoxelizerEditorStyles.GetTinyButtonStyle(10, 2);
             Rect outter = new Rect(Vector3.zero, new Vector2(position.width, 12));
             VoxelizerEditorUtils.DrawUIBox(Color.black, Color.white, outter, 1);
@@ -137,6 +153,7 @@ namespace Voxelization.Tools
             {
                 GUILayout.Space(15f);
             }
+        */
         }
 
         private (Vector3, Vector3, int) SelectMeshPart()
