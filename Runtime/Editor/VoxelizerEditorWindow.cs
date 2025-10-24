@@ -80,7 +80,10 @@ namespace Voxelization.Tools
         [MenuItem("Window/Mesh Voxelization Tool")]
         public static void ShowWindow()
         {
-            var window = EditorWindow.GetWindow(typeof(VoxelizerEditorWindow), true, appName);
+            // Create a non-utility window so it can be docked into the Editor
+            var window = (VoxelizerEditorWindow)EditorWindow.GetWindow(typeof(VoxelizerEditorWindow), false, appName);
+            // Ensure the tab shows the application name
+            window.titleContent = new GUIContent(appName);
 
             window.maxSize = new Vector2(400f, 700f);
             window.minSize = new Vector2(320f, 580f);
